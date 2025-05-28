@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa Conceptual: Sistemas Inteligentes y Aprendizaje Automático</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+        }
+        .mapa-conceptual {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .tema-principal {
+            background-color: #007bff;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            font-size: 1.8em;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .categoria {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-left: 5px solid #007bff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            width: 90%;
+            max-width: 1000px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .categoria h2 {
+            color: #0056b3;
+            margin-top: 0;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 10px;
+        }
+        .categoria ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .categoria ul li {
+            background-color: #f9f9f9;
+            border: 1px solid #eee;
+            padding: 10px 15px;
+            margin-bottom: 8px;
+            border-radius: 5px;
+            position: relative;
+            padding-left: 25px;
+        }
+        .categoria ul li::before {
+            content: '➔';
+            position: absolute;
+            left: 8px;
+            color: #007bff;
+        }
+        .sub-categoria {
+            margin-left: 20px;
+            border-left: 3px solid #6c757d; /* Azul más claro para subcategorías */
+            padding-left: 15px;
+            margin-top:10px;
+        }
+        .sub-categoria h3 {
+            color: #17a2b8; /* Color turquesa para títulos de subcategorías */
+            font-size: 1.1em;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+        .sub-categoria ul li::before {
+            color: #17a2b8;
+        }
+        .ref-articulo {
+            font-size: 0.8em;
+            color: #6c757d;
+            display: block;
+            margin-top: 5px;
+        }
+        .detalles {
+            font-size: 0.9em;
+            color: #444;
+            margin-left: 20px;
+        }
+        .detalles strong {
+            color: #333;
+        }
+        .conector { /* Para jerarquía visual, no líneas reales */
+            text-align: center;
+            font-size: 1.5em;
+            color: #007bff;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="mapa-conceptual">
+        <div class="tema-principal">Sistemas Inteligentes y Aprendizaje Automático: Aplicaciones y Metodologías</div>
+
+        <div class="categoria">
+            <h2>I. Conceptos Fundamentales de Aprendizaje Automático (ML) y Aprendizaje Profundo (DL)</h2>
+            <ul>
+                <li>
+                    Paradigmas y Estilos de Aprendizaje Automático
+                    <span class="ref-articulo">(Principalmente de: Revisión Estilos de Aprendizaje en CV, Revisión PNI)</span>
+                    <div class="detalles">
+                        <strong>Estilos:</strong> Supervisado (dominante), No Supervisado, Semi-Supervisado, por Refuerzo, Auto-Supervisado, por Transferencia, Pocas Muestras (Few-Shot), Cero Muestras (Zero-Shot), Ensemble, Federado. <br>
+                        <strong>Objetivo:</strong> Automatizar tareas aprendiendo de los datos.
+                    </div>
+                </li>
+                <li>
+                    Arquitecturas de Aprendizaje Profundo
+                    <span class="ref-articulo">(Referenciado en: Identificación de Ictus, Detección de Fraude, Encuesta XAI, Revisión PNI, Revisión Estilos CV)</span>
+                    <div class="detalles">
+                        <strong>Modelos:</strong> Redes Neuronales Convolucionales (CNN), Redes Neuronales Recurrentes (RNN), Memoria a Corto-Largo Plazo (LSTM), LSTM Bidireccional (BiLSTM), Autoencoders. <br>
+                        <strong>Aplicación:</strong> Extracción de características, clasificación, modelado de secuencias.
+                    </div>
+                </li>
+                <li>
+                    Selección e Ingeniería de Características
+                    <span class="ref-articulo">(Referenciado en: Identificación de Ictus, Detección de Fraude)</span>
+                    <div class="detalles">
+                        <strong>Técnicas:</strong> Algoritmos Genéticos, PCA, extracción de características específicas del dominio. <br>
+                        <strong>Objetivo:</strong> Identificar los atributos de datos más relevantes para el rendimiento e interpretabilidad del modelo.
+                    </div>
+                </li>
+                 <li>
+                    Métricas de Evaluación
+                    <span class="ref-articulo">(Común en todos los artículos de aplicación)</span>
+                    <div class="detalles">
+                        Precisión (Accuracy), Precisión (Precision), Exhaustividad (Recall), Puntuación F1 (F1-Score), Curva ROC, AUC.
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="conector">⬇️ Aplicado A ⬇️</div>
+
+        <div class="categoria">
+            <h2>II. Dominios de Aplicación e Implementaciones Específicas</h2>
+            <ul>
+                <li>
+                    Salud y Diagnóstico Médico
+                    <div class="sub-categoria">
+                        <h3>A. Identificación de Ictus usando Neuroimágenes</h3>
+                        <span class="ref-articulo">(Fuente: Artículo de Identificación de Ictus)</span>
+                        <ul>
+                            <li><strong>Datos de Entrada:</strong> Imágenes de TC del cerebro.</li>
+                            <li><strong>Modelo ML Central:</strong> LSTM Bidireccional (BiLSTM) + Algoritmo Genético (GA).</li>
+                            <li><strong>Técnicas Clave:</strong> Selección de características (características de CNN optimizadas por GA), Clasificación de Imágenes.</li>
+                            <li><strong>Objetivo:</strong> Detección temprana y diagnóstico de ictus, mejorando los resultados clínicos. Se alcanzó una precisión de ~96.5%.</li>
+                        </ul>
+                    </div>
+                    <div class="sub-categoria">
+                        <h3>B. Interfaces Nerviosas Periféricas (PNI)</h3>
+                        <span class="ref-articulo">(Fuente: Artículo de Revisión PNI)</span>
+                        <ul>
+                            <li><strong>Aplicación:</strong> Medicina bioelectrónica, neuroprótesis.</li>
+                            <li><strong>ML Dominante:</strong> Aprendizaje supervisado (ANN, CNN, SVM).</li>
+                            <li><strong>Tareas:</strong> Clasificación de actividad neural, regresión.</li>
+                            <li><strong>Desafíos:</strong> Escasez de datos, reproducibilidad, subutilización de métodos de RL/no supervisados.</li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    Tecnología Financiera (FinTech)
+                    <div class="sub-categoria">
+                        <h3>A. Detección de Fraude en Tarjetas de Crédito</h3>
+                        <span class="ref-articulo">(Fuente: Artículo de Detección de Fraude)</span>
+                        <ul>
+                            <li><strong>Datos de Entrada:</strong> Datos de transacciones.</li>
+                            <li><strong>Modelos ML/DL Centrales:</strong> CNNs, Regresión Logística, Random Forest, SVM.</li>
+                            <li><strong>Técnicas Clave:</strong> Detección de anomalías, clasificación.</li>
+                            <li><strong>Desafíos:</strong> Desbalance de clases, altas tasas de falsas alarmas.</li>
+                            <li><strong>Objetivo:</strong> Detección de fraude en el mundo real, minimizando pérdidas financieras. Se alcanzó alta precisión (99.9% con CNN optimizada).</li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    Visión por Computadora (CV)
+                    <span class="ref-articulo">(Fuente: Artículo de Revisión de Estilos de Aprendizaje en CV)</span>
+                    <div class="sub-categoria">
+                        <h3>A. Tareas Generales de CV y Estilos de Aprendizaje</h3>
+                        <ul>
+                            <li><strong>Tareas:</strong> Identificación/clasificación de objetos, segmentación de imágenes, extracción de información de imágenes/videos.</li>
+                            <li><strong>Estilos de Aprendizaje Revisados:</strong> Supervisado, No Supervisado, por Refuerzo, Transferencia, Pocas/Cero Muestras, Activo, Ensemble, etc.</li>
+                            <li><strong>Objetivo:</strong> Analizar la evolución, técnicas y direcciones futuras de los estilos de ML en CV.</li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="conector">⬇️ Consideraciones y Metodologías Transversales ⬇️</div>
+
+        <div class="categoria">
+            <h2>III. Inteligencia Artificial Explicable (XAI) e Interpretabilidad</h2>
+            <span class="ref-articulo">(Fuente: Artículo de Encuesta XAI)</span>
+            <ul>
+                <li>
+                    Objetivo de la XAI
+                    <div class="detalles">Entender las decisiones del modelo, asegurar fiabilidad, responsabilidad y confiabilidad. Crucial para dominios de alto riesgo como la medicina.</div>
+                </li>
+                <li>
+                    Categorías de Métodos de Interpretabilidad
+                    <ul>
+                        <li><strong>Interpretabilidad Perceptiva:</strong>
+                            <div class="detalles">Métodos de Salicencia (ej., CAM, Grad-CAM, LRP), Métodos de Señal (Inversión, Maximización de Activación), Interpretabilidad Verbal (Basada en reglas, enunciados lógicos).</div>
+                        </li>
+                        <li><strong>Interpretabilidad vía Estructura Matemática:</strong>
+                            <div class="detalles">Modelos Predefinidos (Lineales, GAMs), Extracción de Características (PCA, CCA, t-SNE), Análisis de Sensibilidad, Basada en Optimización.</div>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    Enfoque de Aplicación: XAI Médica
+                    <div class="detalles">Adaptar la XAI para clínicos y profesionales, considerando las especificidades de la práctica médica.</div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="categoria">
+            <h2>IV. Desafíos Generales y Direcciones Futuras</h2>
+            <ul>
+                <li>
+                    Desafíos Relacionados con los Datos
+                    <span class="ref-articulo">(Mencionado en: Fraude, PNI, Revisión Estilos CV)</span>
+                    <div class="detalles">
+                        Desbalance de Datos (Fraude), Escasez de Datos (PNI), Necesidad de Grandes Conjuntos de Datos Etiquetados, Calidad y Preprocesamiento de Datos.
+                    </div>
+                </li>
+                <li>
+                    Desafíos Relacionados con los Modelos
+                     <span class="ref-articulo">(Mencionado en: Encuesta XAI, Revisión PNI)</span>
+                    <div class="detalles">
+                        Naturaleza de Caja Negra de los Modelos DL (enfoque XAI), Reproducibilidad (PNI), Costo Computacional, Sobreajuste/Subajuste (Overfitting/Underfitting).
+                    </div>
+                </li>
+                <li>
+                    Aplicabilidad en el Mundo Real
+                    <span class="ref-articulo">(Tema común)</span>
+                    <div class="detalles">
+                        Asegurar que los modelos sean robustos, fiables y se traduzcan en beneficios prácticos en sus respectivos dominios (diagnóstico médico, prevención de fraude, sistemas de CV).
+                    </div>
+                </li>
+                <li>
+                    Avance de Técnicas de ML/DL
+                    <span class="ref-articulo">(Discutido en artículos de revisión: XAI, PNI, Estilos CV)</span>
+                    <div class="detalles">
+                        Explorar paradigmas subutilizados (ej., RL en PNI), desarrollar modelos más sofisticados y eficientes, mejorar métodos XAI, crear soluciones específicas del dominio.
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
